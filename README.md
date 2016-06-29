@@ -1,3 +1,5 @@
+![Build status](https://api.travis-ci.org/webdevvie/nestis.svg)
+
 Nestis
 ======
 
