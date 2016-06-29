@@ -1,0 +1,24 @@
+{
+  "name": "webdevvie/nestis",
+  "description": "A php class that allows for",
+  "keywords": ["nested","object","bystring"],
+  "license": "Apache 2.0",
+  "authors": [
+    {
+      "name": "John Bakker",
+      "email": "me@johnbakker.name"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "5.4.*",
+    "mockery/mockery": "dev-master"
+  },
+  "autoload": {
+    "psr-0": { "Webdevvie\\Nestis": "" }
+  },
+  "target-dir": "Webdevvie/Nestis"
+}
