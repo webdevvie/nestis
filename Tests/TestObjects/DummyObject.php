@@ -29,7 +29,7 @@ class DummyObject
      */
     public static $staticTest='i am quite static';
 
-    private static $privateStaticTest='i am unreachable!';
+    private static $privateStaticTest='i am unreachable!Really I am';
 
     public function __construct()
     {
