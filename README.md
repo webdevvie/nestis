@@ -1,6 +1,5 @@
 Nestis
 ======
-[![Build Status](https://travis-ci.org/webdevvie/nestis.svg?branch=master)](https://travis-ci.org/webdevvie/nestis)
 
 A simple class to get a nested property or array key from an array or nested property.
 
