@@ -1,5 +1,6 @@
 {
   "name": "webdevvie/nestis",
+  "version": "1.1.0",
   "description": "A simple php class that allows for the retrieval of nested object without null checks",
   "keywords": ["nested","object","bystring"],
   "license": "Apache-2.0",
