@@ -1,19 +1,20 @@
 <?php
 namespace Webdevvie\Nestis\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Webdevvie\Nestis\Nestis;
 use Webdevvie\Nestis\Tests\TestObjects\DummyObject;
 
 require_once(__DIR__ . '/../Nestis.php');
 
-class NestisTest extends \PHPUnit_Framework_TestCase
+class NestisTest extends TestCase
 {
     /**
      * @var Nestis
      */
     private $nestis;
 
-    public function setUp()
+    public function setUp():void
     {
         $this->nestis = new Nestis();
     }

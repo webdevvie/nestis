@@ -133,9 +133,9 @@ class Nestis
                 if (is_object($object)) {
                     //try a setter first
                     $cmd = 'set' . ucfirst($path);
-                    if (!is_callable([$object, $cmd])) {
+                    if (is_callable([$object, $cmd])) {
                         $object->$cmd($value);
-                        return false;
+                        return true;
                     }
                     $reflect = new \ReflectionObject($object);
                     $prop = $reflect->getProperty($path);
