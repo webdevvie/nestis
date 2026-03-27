@@ -1,31 +1,39 @@
 {
-  "name": "webdevvie/nestis",
-  "version": "2.0.1",
-  "description": "A simple php class that allows for the retrieval of nested object without null checks",
-  "keywords": ["nested","object","bystring"],
-  "license": "Apache-2.0",
-  "authors": [
-    {
-      "name": "John Bakker",
-      "email": "me@johnbakker.name"
+    "name": "webdevvie\/nestis",
+    "version": "2.0.2",
+    "description": "A simple php class that allows for the retrieval of nested object without null checks",
+    "keywords": [
+        "nested",
+        "object",
+        "bystring"
+    ],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "John Bakker",
+            "email": "me@johnbakker.name"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "~7.4|~8.2"
+    },
+    "require-dev": {
+        "phpunit\/phpunit": ">=11",
+        "rector\/rector": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webdevvie\\Nestis\\": "src\/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Webdevvie\\Nestis\\Tests\\TestObjects\\": "Tests\/TestObjects"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "bin-dir": "bin"
     }
-  ],
-  "minimum-stability": "dev",
-  "require": {
-    "php": "^8.2"
-  },
-  "require-dev": {
-    "phpunit/phpunit": ">=11",
-    "rector/rector": "dev-main"
-  },
-  "autoload": {
-    "psr-4": { "Webdevvie\\Nestis\\": "src/" }
-  },
-  "autoload-dev": {
-    "psr-4": { "Webdevvie\\Nestis\\Tests\\TestObjects\\": "Tests/TestObjects" }
-  },
-  "config": {
-    "sort-packages": true,
-    "bin-dir": "bin"
-  }
 }
