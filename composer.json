@@ -19,7 +19,10 @@
     "rector/rector": "dev-main"
   },
   "autoload": {
-    "psr-0": { "Webdevvie\\Nestis": "src/" }
+    "psr-4": { "Webdevvie\\Nestis\\": "src/" }
+  },
+  "autoload-dev": {
+    "psr-4": { "Webdevvie\\Nestis\\Tests\\TestObjects\\": "Tests/TestObjects" }
   },
   "config": {
     "sort-packages": true,
