@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 use Webdevvie\Nestis\Nestis;
 use Webdevvie\Nestis\Tests\TestObjects\DummyObject;
 
-require_once(__DIR__ . '/../Nestis.php');
+require_once(__DIR__ . '/../src/Nestis.php');
 
 class NestisTest extends TestCase
 {
@@ -103,11 +103,12 @@ class NestisTest extends TestCase
                 'alwaysNull' => null
             ]
         ];
-        $this->nestis->getNestedItem(
+        $result = $this->nestis->getNestedItem(
             'level1/new',
             $object,
             'not found'
         );
+        $this->assertEquals('not found',$result);
     }
     public function testWithPrivateStatic()
     {

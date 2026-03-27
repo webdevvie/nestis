@@ -2,6 +2,10 @@
 
 namespace Webdevvie\Nestis;
 
+use ReflectionObject;
+use Exception;
+use stdClass;
+
 /**
  * @author John Bakker <me@johnbakker.name>
  * built using information from http://unicode.org/emoji/charts/full-emoji-list.html
@@ -78,7 +82,7 @@ class Nestis
                     $mthd = 'get' . ucfirst($part);
                     $mthdIs = 'is' . ucfirst($part);
                     if (substr($part, 0, 2) == '::') {
-                        $reflect = new \ReflectionObject($lastObject);
+                        $reflect = new ReflectionObject($lastObject);
                         $props = $reflect->getStaticProperties();
                         $nm = substr($part, 2);
                         if (isset($props[$nm])) {
@@ -94,7 +98,7 @@ class Nestis
                     } elseif (is_callable([$lastObject, $part])) {
                         $item = $lastObject->$part();
                     } else {
-                        $reflect = new \ReflectionObject($lastObject);
+                        $reflect = new ReflectionObject($lastObject);
                         $prop = $reflect->getProperty($part);
                         if ($prop->isPublic()) {
                             $item = $lastObject->$part;
@@ -107,7 +111,7 @@ class Nestis
                         $found = true;
                     }
                 }
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 return $default;
             }
             if ((!is_null($item) && !is_object($item) && !is_array($item) && $nr < $totalParts) || !$found) {
@@ -137,7 +141,7 @@ class Nestis
                         $object->$cmd($value);
                         return true;
                     }
-                    $reflect = new \ReflectionObject($object);
+                    $reflect = new ReflectionObject($object);
                     $prop = $reflect->getProperty($path);
                     if ($prop->isPublic()) {
                         $object->$path = $value;
@@ -151,7 +155,7 @@ class Nestis
                     $object[$path] = $value;
                     return true;
                 }
-            } catch (\Exception $exception) {
+            } catch (Exception $exception) {
                 //don't bother ?
             }
             return false;
@@ -164,7 +168,7 @@ class Nestis
             $mthd = 'get' . ucfirst($part);
             $mthdIs = 'is' . ucfirst($part);
             if (substr($part, 0, 2) == '::') {
-                $reflect = new \ReflectionObject($lastObject);
+                $reflect = new ReflectionObject($lastObject);
                 $props = $reflect->getStaticProperties();
                 $nm = substr($part, 2);
                 if (isset($props[$nm])) {
@@ -180,7 +184,7 @@ class Nestis
             } elseif (is_callable([$lastObject, $part])) {
                 $item = $lastObject->$part();
             } else {
-                $reflect = new \ReflectionObject($lastObject);
+                $reflect = new ReflectionObject($lastObject);
                 $prop = $reflect->getProperty($part);
                 if ($prop->isPublic()) {
                     $item = &$lastObject->$part;
@@ -200,7 +204,7 @@ class Nestis
             return self::setNestedValue(implode("/", $parts), $lastObject[$part], $value, $clear);
         }
         if (is_null($item) && is_object($lastObject)) {
-            $lastObject->$part = new \stdClass();
+            $lastObject->$part = new stdClass();
             return self::setNestedValue(implode("/", $parts), $lastObject->$part, $value, $clear);
         }
         return false;

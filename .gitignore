@@ -1,4 +1,7 @@
 vendor
 coverage
 composer.phar
+composer.lock
 .idea
+bin/
+.phpunit.result.cache
