@@ -21,7 +21,6 @@
   "autoload": {
     "psr-0": { "Webdevvie\\Nestis": "src/" }
   },
-  "target-dir": "Webdevvie/Nestis",
   "config": {
     "sort-packages": true,
     "bin-dir": "bin"
